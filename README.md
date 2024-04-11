@@ -1,6 +1,6 @@
 ### for install please run this command:
 ```
-cd && git clone https://github.com/BEQSONA-cmd/Debug_Leaks.git && cd Debug_Leaks && ./install
+cd && git clone https://github.com/BEQSONA-cmd/Debug_Leaks.git && cd Debug_Leaks && ./install.sh
 ```
 
 
