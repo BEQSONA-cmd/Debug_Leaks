@@ -61,7 +61,7 @@ int	main(void)
 	snprintf(path, sizeof(path), "%s/%s", home, filename);
 	std::vector<std::string> linesToRemove;
 	linesToRemove.push_back("");
-	linesToRemove.push_back("alias dl='python3 ~/Cabinette/Leaks/leaks.py'");
+	linesToRemove.push_back("alias dl='python3 ~/Debug_Leaks/leaks.py'");
 	removeSpecificLines(path, linesToRemove);
 	return (0);
 }

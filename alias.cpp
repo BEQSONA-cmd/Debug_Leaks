@@ -27,7 +27,7 @@ int	main(void)
 	else
 	{
 		ft_putstr_fd("\n", file);
-		ft_putstr_fd("alias dl='python3 ~/Cabinette/Leaks/leaks.py'\n", file);
+		ft_putstr_fd("alias dl='python3 ~/Debug_Leaks/leaks.py'\n", file);
 	}
 	file.close();
 	return (0);
