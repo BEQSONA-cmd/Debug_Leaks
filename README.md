@@ -12,8 +12,9 @@ example
 ```
 dl ./push_swap 4 2 3 1
 ```
-or
+or if you have endless program you have to add flag '-e'
+(program that needs to press or click something to finish the process)
 ```
-dl ./program
+dl -e ./philo 5 400 100 100
 ```
 'dl' stand for (debug leaks) :)
