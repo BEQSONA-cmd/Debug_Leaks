@@ -22,4 +22,4 @@ dl -e ./philo 5 400 100 100
 #### 'dl' stand for (debug leaks) :)
 
 ## Here is guide for how you can fix leaks with this tool:
-<img src="https://github.com/BEQSONA-cmd/Debug_Leaks/blob/main/Debug_leaks_Guide.gif" width="600">
+<img src="https://github.com/BEQSONA-cmd/Debug_Leaks/blob/main/gif/Debug_leaks_Guide.gif" width="600">
