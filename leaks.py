@@ -13,6 +13,13 @@ def usleep(mlsec):
     sec = mlsec / 1000000.0
     time.sleep(sec)
 
+def if_there_is_a_file(file_name, all_files):
+    file_name = file_name.split(":")[0][1:]
+    if any(os.path.basename(file) == file_name for file in all_files):
+        return True
+    else:
+        return False
+
 def wait_for_input(place, i):
     try:
         if i == 0:
@@ -42,6 +49,13 @@ def check_leaks(program_name, *args):
     j = 1
     l = 0
     condi = 0
+    all_files = []
+    for root, dirs, files in os.walk("."):
+        all_files.append(root)
+        for directory in dirs:
+            all_files.append(os.path.join(root, directory))
+        for file in files:
+            all_files.append(os.path.join(root, file))
     if not os.path.isfile(program_name):
         print(f"{RED}[{program_name} not found ]{RESET}")
         sys.exit(1)
@@ -88,8 +102,11 @@ def check_leaks(program_name, *args):
                 leak_func = parts[3]
                 leak_place = parts[4]
                 if(parts[3] != "2002-2017,"):
-                    if(leak_in_func != "malloc" and leak_func != "main"):
-                        i += 1
+                    if not(if_there_is_a_file(leak_place, all_files)):
+                        if(i != 0):
+                            i = i
+                        else:
+                            i = 0
                     else:
                         if(i == 0):
                             print(f"{RED}Leak number:[{j}]{RESET}")
@@ -99,12 +116,21 @@ def check_leaks(program_name, *args):
                         if(leak_func == "main"):
                             i = 0
                             j += 1
+
         
 def check_leaks_endles_program(program_name, *args):
     i = 0
     j = 1
     l = 0
     condi = 0
+    all_files = []
+    for root, dirs, files in os.walk("."):
+        all_files.append(root)
+        for directory in dirs:
+            all_files.append(os.path.join(root, directory))
+        for file in files:
+            all_files.append(os.path.join(root, file))
+
     if not os.path.isfile(program_name):
         print(f"{RED}[{program_name} not found ]{RESET}")
         sys.exit(1)
@@ -147,8 +173,11 @@ def check_leaks_endles_program(program_name, *args):
                 leak_func = parts[3]
                 leak_place = parts[4]
                 if(parts[3] != "2002-2017,"):
-                    if(leak_in_func != "malloc" and leak_func != "main"):
-                        i += 1
+                    if not(if_there_is_a_file(leak_place, all_files)):
+                        if(i != 0):
+                            i = i
+                        else:
+                            i = 0
                     else:
                         if(i == 0):
                             print(f"{RED}Leak number:[{j}]{RESET}")
