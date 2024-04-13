@@ -4,7 +4,7 @@ cd && git clone https://github.com/BEQSONA-cmd/Debug_Leaks.git && cd Debug_Leaks
 ```
 
 
-### After that you have to run:
+### After that you have to open NEW terminal and run:
 ```
 dl "Program Name" (with/without arguments)
 ```
@@ -17,6 +17,12 @@ or if you have endless program you have to add flag '-e'
 (program that needs to press or click something to finish the process)
 ```
 dl -e ./philo 5 400 100 100
+```
+and you can stop the process with just clicking (Ctrl + c)
+
+### !!! and dont forget to add '-g' flag in Makefile !!!
+```
+CFLAGS = -Wall -Wextra -Werror -g
 ```
 
 #### 'dl' stand for (debug leaks) :)
